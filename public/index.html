@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SocialHub</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#">✦ SOCIAL<span>HUB</span></a><nav><a href="#shop">Dịch vụ</a><a href="#wallet">Ví</a><a href="#orders">Đơn hàng</a></nav><div id="userArea"><button onclick="openAuth()">Đăng nhập</button></div></div></header>
+<main class="wrap">
+<section class="hero"><div><small>SOCIAL MEDIA SERVICES</small><h1>Xây dựng kênh<br><em>chuyên nghiệp.</em></h1><p>Đặt dịch vụ, nạp tiền và theo dõi đơn hàng trong một nơi.</p><button class="primary" onclick="document.getElementById('shop').scrollIntoView()">Xem dịch vụ →</button></div><div class="heroCard"><span>SỐ DƯ</span><b id="heroBal">0đ</b><button onclick="openDeposit()">+ Nạp tiền</button></div></section>
+<section id="shop"><div class="title"><div><small>DỊCH VỤ</small><h2>Dịch vụ nổi bật</h2></div><input id="q" oninput="renderServices()" placeholder="Tìm dịch vụ..."></div><div id="services" class="grid"></div></section>
+<section id="wallet" class="panel"><div><small>VÍ CỦA TÔI</small><h2>Số dư <span id="bal">0đ</span></h2><p>Nạp tiền bằng QR chuyển khoản sau khi cấu hình thông tin ngân hàng.</p></div><button class="primary" onclick="openDeposit()">Nạp tiền</button></section>
+<section id="orders"><div class="title"><div><small>LỊCH SỬ</small><h2>Đơn hàng</h2></div></div><div id="orderList" class="list"></div></section>
+</main>
+<div id="auth" class="modal"><div class="box"><button class="x" onclick="closeModal('auth')">×</button><div class="tabs"><button id="loginTab" class="active" onclick="authMode('login')">Đăng nhập</button><button id="regTab" onclick="authMode('register')">Đăng ký</button></div><input id="name" placeholder="Họ tên"><input id="email" placeholder="Email"><input id="pass" type="password" placeholder="Mật khẩu"><button class="primary full" onclick="submitAuth()">Tiếp tục</button><p id="authMsg"></p></div></div>
+<div id="deposit" class="modal"><div class="box"><button class="x" onclick="closeModal('deposit')">×</button><small>NẠP TIỀN</small><h2>Chọn số tiền</h2><div class="amounts"><button onclick="setAmount(50000)">50K</button><button onclick="setAmount(100000)">100K</button><button onclick="setAmount(200000)">200K</button><button onclick="setAmount(500000)">500K</button></div><input id="amount" type="number" placeholder="Nhập số tiền"><button class="primary full" onclick="createDeposit()">Tạo yêu cầu nạp</button><div id="qr" class="qr"></div><p class="hint">Sau khi chuyển khoản, admin xác nhận thì số dư mới được cộng.</p></div></div>
+<div id="admin" class="modal"><div class="box wide"><button class="x" onclick="closeModal('admin')">×</button><small>ADMIN</small><h2>Quản trị</h2><div id="adminContent"></div></div></div>
+<div id="toast"></div><script src="app.js"></script></body></html>
