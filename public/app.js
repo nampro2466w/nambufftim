@@ -151,10 +151,10 @@ function renderServices() {
           class="service-img"
           src="${
             x.category === "TikTok"
-              ? "https://placehold.co/800x450/111827/ffffff?text=TikTok"
-              : x.category === "Facebook"
-              ? "https://placehold.co/800x450/111827/ffffff?text=Facebook"
-              : "https://placehold.co/800x450/111827/ffffff?text=Zalo"
+  ? "https://www.loudlocal.co.uk/hubfs/Tiktok%20digital%20marketing%20blog%20by%20Tanya%20%20%281%29.webp"
+  : x.category === "Facebook"
+  ? "https://reactnative.dev/blog/assets/many-platform-vision-facebook-website.png"
+  : "https://userstyles.org/style_screenshots/256883_after.jpeg?r=1772463643"
           }"
           alt="${x.category}"
         >
