@@ -38,4 +38,109 @@ async function approve(id){await api("/api/admin/deposits/"+id+"/approve",{metho
 async function reject(id){await api("/api/admin/deposits/"+id+"/reject",{method:"POST"});toast("Đã từ chối");openAdmin()}
 async function setStatus(id,status){await api("/api/admin/orders/"+id+"/status",{method:"POST",body:JSON.stringify({status})});toast("Đã cập nhật")}
 async function loadAll(){await loadServices();await loadOrders()}
-(async()=>{try{let d=await api("/api/me");user=d.user;renderUser();loadAll()}catch(e){}})();
+(async()=>{try{let d=await api("/api/me");user=d.user;renderUser();loadAll()}catch(e){}})();.support-widget{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:90;
+  width:280px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;
+  background:rgba(12,17,26,.94);
+  backdrop-filter:blur(18px);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.support-title{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  margin-bottom:13px;
+}
+
+.support-title strong{
+  display:block;
+  color:#fff;
+  font-size:14px;
+}
+
+.support-title small{
+  display:block;
+  margin-top:3px;
+  color:#7f8ca0;
+  font-size:11px;
+}
+
+.support-dot{
+  width:10px;
+  height:10px;
+  flex:none;
+  border-radius:50%;
+  background:#36d399;
+  box-shadow:0 0 12px rgba(54,211,153,.7);
+}
+
+.support-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.support-btn{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:11px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;
+  background:#111925;
+  color:#fff;
+  transition:.2s ease;
+}
+
+.support-btn:hover{
+  transform:translateY(-2px);
+  border-color:#38465d;
+  background:#172131;
+}
+
+.support-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  flex:none;
+  border-radius:9px;
+  background:#1c2635;
+  font-weight:900;
+}
+
+.support-btn b{
+  display:block;
+  font-size:13px;
+}
+
+.support-btn small{
+  display:block;
+  margin-top:2px;
+  color:#7f8ca0;
+  font-size:11px;
+}
+
+.telegram .support-icon{
+  color:#63b9ff;
+}
+
+.zalo .support-icon{
+  color:#7aa7ff;
+}
+
+@media(max-width:560px){
+  .support-widget{
+    right:12px;
+    bottom:12px;
+    width:calc(100% - 24px);
+  }
+}
