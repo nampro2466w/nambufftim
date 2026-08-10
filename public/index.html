@@ -12,4 +12,37 @@
 <div id="auth" class="modal"><div class="box"><button class="x" onclick="closeModal('auth')">×</button><div class="tabs"><button id="loginTab" class="active" onclick="authMode('login')">Đăng nhập</button><button id="regTab" onclick="authMode('register')">Đăng ký</button></div><input id="name" placeholder="Họ tên"><input id="email" placeholder="Email"><input id="pass" type="password" placeholder="Mật khẩu"><button class="primary full" onclick="submitAuth()">Tiếp tục</button><p id="authMsg"></p></div></div>
 <div id="deposit" class="modal"><div class="box"><button class="x" onclick="closeModal('deposit')">×</button><small>NẠP TIỀN</small><h2>Chọn số tiền</h2><div class="amounts"><button onclick="setAmount(50000)">50K</button><button onclick="setAmount(100000)">100K</button><button onclick="setAmount(200000)">200K</button><button onclick="setAmount(500000)">500K</button></div><input id="amount" type="number" placeholder="Nhập số tiền"><button class="primary full" onclick="createDeposit()">Tạo yêu cầu nạp</button><div id="qr" class="qr"></div><p class="hint">Sau khi chuyển khoản, admin xác nhận thì số dư mới được cộng.</p></div></div>
 <div id="admin" class="modal"><div class="box wide"><button class="x" onclick="closeModal('admin')">×</button><small>ADMIN</small><h2>Quản trị</h2><div id="adminContent"></div></div></div>
-<div id="toast"></div><script src="app.js"></script></body></html>
+<!-- CSKH -->
+<div class="support-widget">
+  <div class="support-title">
+    <span class="support-dot"></span>
+    <div>
+      <strong>CSKH NamBuffTim</strong>
+      <small>Hỗ trợ khách hàng</small>
+    </div>
+  </div>
+
+  <div class="support-buttons">
+    <a class="support-btn telegram"
+       href="https://t.me/Quanlymxh"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="support-icon">✈</span>
+      <span>
+        <b>Telegram</b>
+        <small>@Quanlymxh</small>
+      </span>
+    </a>
+
+    <a class="support-btn zalo"
+       href="https://zalo.me/0866696331"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="support-icon">Z</span>
+      <span>
+        <b>Zalo</b>
+        <small>0866696331</small>
+      </span>
+    </a>
+  </div>
+</div><div id="toast"></div><script src="app.js"></script></body></html>
